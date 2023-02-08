@@ -2,19 +2,19 @@
   <ul class="pagination">
     <li
       (click)="currentIndex = currentIndex - 1"
-      [ngClass]="{ disabled: currentIndex === 0 }"
+      [class.disabled]="currentIndex === 0"
       class="page-item"
     >
       <a class="page-link">Prev</a>
     </li>
     <ng-container *ngFor="let page of pages; let i = index">
-      <li (click)="currentIndex = i" [ngClass]="{ active: currentIndex === i }">
+      <li (click)="currentIndex = i" [class.active]="currentIndex === i">
         <a class="page-link">{{ i + 1 }}</a>
       </li>
     </ng-container>
     <li
       (click)="currentIndex = currentIndex + 1"
-      [ngClass]="{ disabled: currentIndex === pages.length - 1 }"
+      [class.disabled]="currentIndex === pages.length - 1"
       class="page-item"
     >
       <a class="page-link">Next</a>
